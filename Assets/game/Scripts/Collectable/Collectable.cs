@@ -7,6 +7,8 @@ public class Collectable : MonoBehaviour, ICollectItem
 
     public delegate void CollectibleEvent();
     public static CollectibleEvent colllectibleEvent;
+
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,9 @@ public class Collectable : MonoBehaviour, ICollectItem
     public void CollectItem()
     {
         colllectibleEvent?.Invoke();
-        Destroy(gameObject);
+        animator.SetTrigger("Collected");
+        Destroy(gameObject, 1f);
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)

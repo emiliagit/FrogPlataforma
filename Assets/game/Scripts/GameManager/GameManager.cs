@@ -18,9 +18,9 @@ public class GameManager : MonoBehaviour
     void Inventory()
     {
         contador++;
-        recolectablesText.text = "Food collected: " + contador;
+        recolectablesText.text = "Obects collected: " + contador;
 
-        if (contador == 10)
+        if (contador == 11)
         {
             SceneManager.LoadScene("Level1");
         }

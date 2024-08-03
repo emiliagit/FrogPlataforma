@@ -10,6 +10,8 @@ public abstract class PowerUp : MonoBehaviour, ICollectItem
     public static PowerUpEvent powerUpEvent;
 
     protected float duration;
+
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,8 @@ public abstract class PowerUp : MonoBehaviour, ICollectItem
     public void CollectItem()
     {
         powerUpEvent?.Invoke();
-        Destroy(gameObject);
+        animator.SetTrigger("Collected");
+        Destroy(gameObject, 1f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
