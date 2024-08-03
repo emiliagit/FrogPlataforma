@@ -46,7 +46,6 @@ GameObject:
   - component: {fileID: 7916375111061993040}
   - component: {fileID: 8909284377518623495}
   - component: {fileID: 1572636975172317539}
-  - component: {fileID: 8332614823107018504}
   m_Layer: 0
   m_Name: Run (32x32)_0
   m_TagString: Player
@@ -248,25 +247,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 0}
   hp: 10
---- !u!114 &8332614823107018504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1866623146273433524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5588c93b4ccbc69459b5fe0838e11bff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackSpeed: 2
-  attackHitDelay: 1
-  extraDelayUntilSpriteFlip: 0.5
-  attackRange: 0.36
-  damage: 0
-  attackPoint: {fileID: 824766630943280248}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  hp: 0

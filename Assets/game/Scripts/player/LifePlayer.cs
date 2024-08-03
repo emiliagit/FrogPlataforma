@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class LifePlayer : MonoBehaviour
+public class LifePlayer : MonoBehaviour, ITakeDamage
 {
     public Slider slider;
 

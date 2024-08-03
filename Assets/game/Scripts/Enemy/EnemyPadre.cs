@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class EnemyPadre : MonoBehaviour, ITakeDamage
+public abstract class EnemyPadre : MonoBehaviour
 {
 
     protected float hp;
@@ -31,15 +31,16 @@ public abstract class EnemyPadre : MonoBehaviour, ITakeDamage
         hp -=dmg;
     }
 
-    
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if(collision.gameObject.TryGetComponent(out LifePlayer player))
-    //    {
-    //        player.TakeDamage(1);
-    //    }
-    //}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out LifePlayer player))
+        {
+            player.GetComponent<ITakeDamage>().TakeDamage(1);
+            //player.TakeDamage(1);
+        }
+    }
 
     protected abstract void Attack();
 
