@@ -6,3 +6,8 @@ public interface ITakeDamage
 {
     void TakeDamage(float damageToTake);
 }
+
+public interface ICollectItem
+{
+    void CollectItem();
+}

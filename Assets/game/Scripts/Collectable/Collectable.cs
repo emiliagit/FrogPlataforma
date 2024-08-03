@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collectable : MonoBehaviour
+public class Collectable : MonoBehaviour, ICollectItem
 {
 
     public delegate void CollectibleEvent();
@@ -19,12 +19,17 @@ public class Collectable : MonoBehaviour
         
     }
 
+    public void CollectItem()
+    {
+        colllectibleEvent?.Invoke();
+        Destroy(gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            colllectibleEvent?.Invoke();
-            Destroy(gameObject);
+            CollectItem();
 
         }
     }

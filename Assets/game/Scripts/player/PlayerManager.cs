@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-
-    [SerializeField] private float moveSpeed;
+    public float moveSpeed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float gravityMultiplier;
     [SerializeField] private LayerMask groundLayer;
