@@ -10,7 +10,7 @@ public class SpeedPW : PowerUp
     // Start is called before the first frame update
     void Start()
     {
-        lifePlayer = GetComponent<LifePlayer>();
+        
     }
 
     // Update is called once per frame
