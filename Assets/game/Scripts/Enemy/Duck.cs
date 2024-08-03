@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skull : EnemyPadre
+public class Duck : EnemyPadre
 {
     // Start is called before the first frame update
     void Start()
@@ -19,10 +19,5 @@ public class Skull : EnemyPadre
     protected override void Attack()
     {
 
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        
     }
 }

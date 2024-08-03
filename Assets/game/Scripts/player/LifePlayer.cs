@@ -2,34 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LifePlayer : MonoBehaviour
 {
+    public Slider slider;
 
-    [SerializeField] RawImage[] hearts;
-
-    private int maxHealth = 4;
-    private int currentHealth;
+    public float hp;
+  
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        hp = 1;
+        UpdateHealthUI();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (hp <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+
+        UpdateHealthUI();
     }
 
-    private void TakeDamage(int daño)
+    public void TakeDamage(float damageToTake)
     {
-        //logica de daño del player
+        hp -= damageToTake;
+        UpdateHealthUI();
     }
 
-    private void UpdateLife(int hp)
+
+
+    void UpdateHealthUI()
     {
-        //logica para actualizar UI;
+        hp = Mathf.Clamp(hp, 0, 100);
+        slider.value = hp;
     }
 }

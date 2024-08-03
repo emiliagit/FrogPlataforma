@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class EnemyPadre : MonoBehaviour
+public abstract class EnemyPadre : MonoBehaviour, ITakeDamage
 {
-
-    public Slider healthSlider;
 
     protected float hp;
 
-    public Transform player;
+    //public Transform player;
 
 
     // Start is called before the first frame update
@@ -22,28 +20,26 @@ public abstract class EnemyPadre : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(hp <= 0) 
+        {
+            Destroy(gameObject); 
+        }
     }
 
-    protected virtual void Movement()
+   public void TakeDamage(float dmg)
     {
-        //rango de movimiento de los enemigos que puede ser modificado o no en las clases hijas
+        hp -=dmg;
     }
 
-    protected virtual void RecibirDaño()
-    {
-        //daño del enemigo 
-    }
+    
 
-    protected void UpdateHealthUI()
-    {
-        //actualizacion de interfaz
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        //colision de enemgios con player y generar daño
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if(collision.gameObject.TryGetComponent(out LifePlayer player))
+    //    {
+    //        player.TakeDamage(1);
+    //    }
+    //}
 
     protected abstract void Attack();
 

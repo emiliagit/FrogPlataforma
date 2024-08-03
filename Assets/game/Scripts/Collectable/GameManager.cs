@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class SceneManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI recolectablesText;
 
