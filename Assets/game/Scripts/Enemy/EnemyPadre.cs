@@ -37,8 +37,8 @@ public abstract class EnemyPadre : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out LifePlayer player))
         {
-            player.GetComponent<ITakeDamage>().TakeDamage(1);
-            //player.TakeDamage(1);
+            player.GetComponent<ITakeDamage>().TakeDamage(2);
+           
         }
     }
 

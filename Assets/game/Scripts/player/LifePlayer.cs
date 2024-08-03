@@ -14,7 +14,7 @@ public class LifePlayer : MonoBehaviour, ITakeDamage
     // Start is called before the first frame update
     void Start()
     {
-        hp = 1;
+        
         UpdateHealthUI();
     }
 
