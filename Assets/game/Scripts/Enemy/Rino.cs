@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Duck : EnemyPadre
+public class Rino : EnemyPadre
 {
 
     public float moveDistance ;  // Distancia de movimiento en el eje X
