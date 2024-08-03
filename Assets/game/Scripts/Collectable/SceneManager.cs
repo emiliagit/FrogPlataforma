@@ -20,10 +20,10 @@ public class SceneManager : MonoBehaviour
         contador++;
         recolectablesText.text = "Food collected: " + contador;
 
-        //if (contador == 10)
-        //{
-        //   SceneManager.LoadScene("Level1") ;
-        //}
+        if (contador == 10)
+        {
+            SceneManager.LoadScene("Level1");
+        }
     }
 
    
