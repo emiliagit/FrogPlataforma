@@ -9,11 +9,13 @@ public class LifePlayer : MonoBehaviour, ITakeDamage
     public Slider slider;
 
     public float hp;
-  
+
+    public float Hp { get => hp; set => hp = value; }
 
     // Start is called before the first frame update
     void Start()
     {
+        hp = 6;
         
         UpdateHealthUI();
     }
