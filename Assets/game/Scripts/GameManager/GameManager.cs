@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI recolectablesText;
 
+    public string nextLevelScene;
+
     private int contador;
 
     private void Start()
@@ -20,13 +22,18 @@ public class GameManager : MonoBehaviour
         contador++;
         recolectablesText.text = "Obects collected: " + contador;
 
-        if (contador == 11)
+        if (contador == 10)
         {
-            SceneManager.LoadScene("Level1");
+            NextLevel2(nextLevelScene);
         }
     }
 
-   
+    private void NextLevel2(string level)
+    {
+        SceneManager.LoadScene(level);
+    }
+
+
 
     private void OnEnable()
     {

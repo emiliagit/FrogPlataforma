@@ -25,7 +25,7 @@ public class Collectable : MonoBehaviour, ICollectItem
     {
         colllectibleEvent?.Invoke();
         animator.SetTrigger("Collected");
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, 0.5f);
 
     }
 

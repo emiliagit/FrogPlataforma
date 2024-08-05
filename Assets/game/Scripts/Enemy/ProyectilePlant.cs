@@ -18,17 +18,17 @@ public class ProyectilePlant : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.gameObject.CompareTag("Enemy"))
-        {
-            Debug.Log("Colision con player");
-            animator.SetTrigger("Hit");
-            Destroy(gameObject,1f);
-        }
-        if (other.gameObject.TryGetComponent(out LifePlayer player))
-        {
-            player.TakeDamage(1);
-            //animator.SetTrigger("Hit");
-            Debug.Log("vida restada");
-        }
+        //if (!other.gameObject.CompareTag("Enemy"))
+        //{
+        //    Debug.Log("Colision con player");
+        //    //animator.SetTrigger("Hit");
+        //    Destroy(gameObject);
+        //}
+        //if (other.gameObject.TryGetComponent(out LifePlayer player))
+        //{
+        //    player.TakeDamage(1);
+        //    animator.SetTrigger("Hit");
+        //    Debug.Log("vida restada");
+        //}
     }
 }
