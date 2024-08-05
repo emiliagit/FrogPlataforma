@@ -1,49 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public TextMeshProUGUI recolectablesText;
-
-    public string nextLevelScene;
-
-    private int contador;
-
-    private void Start()
+    public void RestartScene()
     {
-        
+        SceneManager.LoadScene("Tutorial");
+
     }
-    void Inventory()
+    public void MenuPrincipal()
     {
-        contador++;
-        recolectablesText.text = "Obects collected: " + contador;
-
-        if (contador == 10)
-        {
-            NextLevel2(nextLevelScene);
-        }
+        SceneManager.LoadScene("MainMenu");
     }
 
-    private void NextLevel2(string level)
+    public void PlayButton()
     {
-        SceneManager.LoadScene(level);
+        SceneManager.LoadScene("Tutorial");
     }
 
-
-
-    private void OnEnable()
+    public void ExitButton()
     {
-        Collectable.colllectibleEvent += Inventory;
+        Debug.Log("salida");
+        Application.Quit();
     }
-
-    private void OnDisable()
-    {
-        Collectable.colllectibleEvent -= Inventory;
-    }
-
-   
 }
